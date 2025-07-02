@@ -39,10 +39,12 @@ server.registerTool("search", {
       .int()
       .min(1)
       .max(600)
+      .default(25)
       .describe("The number of results per page [1-600]"),
     page: z.number()
       .int()
       .positive()
+      .default(1)
       .describe("The results page to retrieve"),
   },
 }, async ({ query, limit, page }) => ({
@@ -57,15 +59,27 @@ server.registerTool("getSlim", {
   description:
     "Gets slimming information for the provided slim-set, where the slims can be reached only via the provided relationships",
   inputSchema: {
-    slimsToIds: z.string().describe(
-      "Comma-separated term IDs forming the 'slim-set'",
-    ),
-    slimsFromIds: z.string().describe(
-      "Comma-separated term IDs from which slimming information is applied",
-    ),
-    relations: z.string().describe(
-      "The relationships over which the slimming information is computed",
-    ),
+    slimsToIds: z
+      .string()
+      .array()
+      .transform((ids) => ids.join(","))
+      .describe(
+        "A list of term IDs forming the 'slim-set'",
+      ),
+    slimsFromIds: z
+      .string()
+      .array()
+      .transform((ids) => ids.join(","))
+      .describe(
+        "A list of term IDs from which slimming information is applied",
+      ),
+    relations: z
+      .string()
+      .array()
+      .transform((rels) => rels.join(","))
+      .describe(
+        "The relationships over which the slimming information is computed",
+      ),
   },
 }, async ({ slimsToIds, slimsFromIds, relations }) => ({
   content: [{
