@@ -119,6 +119,43 @@ export function createQuickGoServer() {
     }],
   }));
 
+  server.registerTool("getAncestors", {
+    title: "Get Ontology Ancestors",
+    description: "Retrieves the ancestors of specified ontology terms",
+    inputSchema: {
+      ids: z
+        .string()
+        .array()
+        .min(1)
+        .transform((ids) => ids.join(","))
+        .describe("A list of term IDs to retrieve ancestors for"),
+    },
+  }, async ({ ids }) => ({
+    content: [{
+      type: "text",
+      text: await callApi("GET", `/ontology/go/terms/${ids}/ancestors`),
+    }],
+  }));
+
+  server.registerTool("getDetails", {
+    title: "Get Ontology Term Details",
+    description:
+      "Retrieves detailed information about specified ontology terms. If possible, response fields include: id, isObsolete, name, definition, ancestors, synonyms, comment, aspect (for GO) and usage.",
+    inputSchema: {
+      ids: z
+        .string()
+        .array()
+        .min(1)
+        .transform((ids) => ids.join(","))
+        .describe("A list of term IDs to retrieve details for"),
+    },
+  }, async ({ ids }) => ({
+    content: [{
+      type: "text",
+      text: await callApi("GET", `/ontology/go/terms/${ids}`),
+    }],
+  }));
+
   return server;
 }
 
