@@ -1,19 +1,20 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@pixel/mcp-adapter@0.1": "0.1.0",
+    "jsr:@pixel/mcp-adapter@~0.1.1": "0.1.1",
     "npm:@hono/node-server@*": "1.15.0_hono@4.8.3",
-    "npm:@modelcontextprotocol/sdk@^1.13.3": "1.13.3_express@5.1.0_zod@3.25.67",
+    "npm:@modelcontextprotocol/sdk@^1.13.3": "1.14.0_express@5.1.0_zod@3.25.71",
+    "npm:@modelcontextprotocol/sdk@^1.14.0": "1.14.0_express@5.1.0_zod@3.25.71",
     "npm:@types/node@*": "22.15.15",
     "npm:fetch-to-node@^2.1.0": "2.1.0",
     "npm:hono@^4.8.3": "4.8.3",
-    "npm:zod@^3.25.67": "3.25.67"
+    "npm:zod@^3.25.71": "3.25.71"
   },
   "jsr": {
-    "@pixel/mcp-adapter@0.1.0": {
-      "integrity": "a1232722e566409f8400ee742644604d5201672a3f6d531852f2c5b80c5899a8",
+    "@pixel/mcp-adapter@0.1.1": {
+      "integrity": "426db5c9dcb2d4ee65653f548a2547a78fdd505d6c867db891210de4a0a5ff4c",
       "dependencies": [
-        "npm:@modelcontextprotocol/sdk",
+        "npm:@modelcontextprotocol/sdk@^1.13.3",
         "npm:fetch-to-node"
       ]
     }
@@ -25,8 +26,8 @@
         "hono"
       ]
     },
-    "@modelcontextprotocol/sdk@1.13.3_express@5.1.0_zod@3.25.67": {
-      "integrity": "sha512-bGwA78F/U5G2jrnsdRkPY3IwIwZeWUEfb5o764b79lb0rJmMT76TLwKhdNZOWakOQtedYefwIR4emisEMvInKA==",
+    "@modelcontextprotocol/sdk@1.14.0_express@5.1.0_zod@3.25.71": {
+      "integrity": "sha512-f43SYQVRPGQcYDQMiL7T2qND4v9xCkBpunIVPhNT/K2vUe+R3kYw2FyOIlbPxZJIYnhBNjeaHFeKv/cOZZErNg==",
       "dependencies": [
         "ajv",
         "content-type",
@@ -523,22 +524,22 @@
     "wrappy@1.0.2": {
       "integrity": "sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ=="
     },
-    "zod-to-json-schema@3.24.6_zod@3.25.67": {
+    "zod-to-json-schema@3.24.6_zod@3.25.71": {
       "integrity": "sha512-h/z3PKvcTcTetyjl1fkj79MHNEjm+HpD6NXheWjzOekY7kV+lwDYnHw+ivHkijnCSMz1yJaWBD9vu/Fcmk+vEg==",
       "dependencies": [
         "zod"
       ]
     },
-    "zod@3.25.67": {
-      "integrity": "sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw=="
+    "zod@3.25.71": {
+      "integrity": "sha512-BsBc/NPk7h8WsUWYWYL+BajcJPY8YhjelaWu2NMLuzgraKAz4Lb4/6K11g9jpuDetjMiqhZ6YaexFLOC0Ogi3Q=="
     }
   },
   "workspace": {
     "dependencies": [
-      "jsr:@pixel/mcp-adapter@0.1",
-      "npm:@modelcontextprotocol/sdk@^1.13.3",
+      "jsr:@pixel/mcp-adapter@~0.1.1",
+      "npm:@modelcontextprotocol/sdk@^1.14.0",
       "npm:hono@^4.8.3",
-      "npm:zod@^3.25.67"
+      "npm:zod@^3.25.71"
     ]
   }
 }
