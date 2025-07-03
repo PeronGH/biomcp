@@ -156,6 +156,25 @@ export function createQuickGoServer() {
     }],
   }));
 
+  server.registerTool("getComplete", {
+    title: "Get Complete Ontology Term",
+    description:
+      "Retrieves complete information about specified ontology terms, including all relationships and properties.",
+    inputSchema: {
+      ids: z
+        .string()
+        .array()
+        .min(1)
+        .transform((ids) => ids.join(","))
+        .describe("A list of term IDs to retrieve complete information for"),
+    },
+  }, async ({ ids }) => ({
+    content: [{
+      type: "text",
+      text: await callApi("GET", `/ontology/go/terms/${ids}/complete`),
+    }],
+  }));
+
   return server;
 }
 
