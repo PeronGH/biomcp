@@ -7,7 +7,7 @@ const API_BASE_URL = "https://www.ebi.ac.uk/QuickGO/services";
 function callApi(
   method: "GET" | "POST",
   path: string,
-  payload: Record<string, unknown>,
+  payload: Record<string, unknown> = {},
 ): Promise<string> {
   const url = new URL(`${API_BASE_URL}${path}`);
   if (method === "GET") {
@@ -33,16 +33,21 @@ export function createQuickGoServer() {
 
   server.registerTool("search", {
     title: "Search Ontology Terms",
-    description: "Searches a simple user query, e.g., query=apopto",
+    description:
+      "Searches a simple user query, e.g., query=apopto. If possible, response fields include: id, name, isObsolete, aspect (for GO).",
     inputSchema: {
-      query: z.string().describe("Some value to search for in the ontology"),
-      limit: z.number()
+      query: z
+        .string()
+        .describe("Some value to search for in the ontology"),
+      limit: z
+        .number()
         .int()
         .min(1)
         .max(600)
         .default(25)
         .describe("The number of results per page [1-600]"),
-      page: z.number()
+      page: z
+        .number()
         .int()
         .positive()
         .default(1)
@@ -79,8 +84,8 @@ export function createQuickGoServer() {
       relations: z
         .string()
         .array()
-        .optional()
-        .transform((rels) => rels?.join(",") ?? "")
+        .default(["is_a", "part_of", "occurs_in", "regulates"])
+        .transform((rels) => rels.join(","))
         .describe(
           "The relationships over which the slimming information is computed",
         ),
@@ -93,6 +98,24 @@ export function createQuickGoServer() {
         slimsFromIds,
         relations,
       }),
+    }],
+  }));
+
+  server.registerTool("getChildren", {
+    title: "Get Ontology Children",
+    description: "Retrieves the children of specified ontology terms",
+    inputSchema: {
+      ids: z
+        .string()
+        .array()
+        .min(1)
+        .transform((ids) => ids.join(","))
+        .describe("A list of term IDs to retrieve children for"),
+    },
+  }, async ({ ids }) => ({
+    content: [{
+      type: "text",
+      text: await callApi("GET", `/ontology/go/terms/${ids}/children`),
     }],
   }));
 
