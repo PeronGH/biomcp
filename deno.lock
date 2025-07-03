@@ -1,6 +1,7 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@pixel/bioc2md@~0.1.1": "0.1.1",
     "jsr:@pixel/mcp-adapter@~0.1.1": "0.1.1",
     "npm:@hono/node-server@*": "1.15.0_hono@4.8.3",
     "npm:@modelcontextprotocol/sdk@^1.13.3": "1.14.0_express@5.1.0_zod@3.25.71",
@@ -11,6 +12,12 @@
     "npm:zod@^3.25.71": "3.25.71"
   },
   "jsr": {
+    "@pixel/bioc2md@0.1.1": {
+      "integrity": "cb6d4b69615bd24ee806d6e04fd23a27567990ae62d2611e6cb4891545cadc2d",
+      "dependencies": [
+        "npm:zod"
+      ]
+    },
     "@pixel/mcp-adapter@0.1.1": {
       "integrity": "426db5c9dcb2d4ee65653f548a2547a78fdd505d6c867db891210de4a0a5ff4c",
       "dependencies": [
@@ -536,6 +543,7 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@pixel/bioc2md@~0.1.1",
       "jsr:@pixel/mcp-adapter@~0.1.1",
       "npm:@modelcontextprotocol/sdk@^1.14.0",
       "npm:hono@^4.8.3",

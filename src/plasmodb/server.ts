@@ -46,7 +46,7 @@ export function createPlasmoDbServer(): McpServer {
         .array()
         .default(ORGANISMS)
         .describe(
-          "Filter by organisms. Should be a subset of the default list. If not specified, all organisms are used.",
+          "Filter by organisms. Should be a subset of the default list. If unspecified, all organisms are used.",
         ),
     },
   }, async ({ textExpression, organisms }) => ({
