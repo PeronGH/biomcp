@@ -1,10 +1,30 @@
 {
   "version": "5",
   "specifiers": {
+    "jsr:@pixel/mcp-adapter@0.1": "0.1.0",
+    "npm:@hono/node-server@*": "1.15.0_hono@4.8.3",
     "npm:@modelcontextprotocol/sdk@^1.13.3": "1.13.3_express@5.1.0_zod@3.25.67",
+    "npm:@types/node@*": "22.15.15",
+    "npm:fetch-to-node@^2.1.0": "2.1.0",
+    "npm:hono@^4.8.3": "4.8.3",
     "npm:zod@^3.25.67": "3.25.67"
   },
+  "jsr": {
+    "@pixel/mcp-adapter@0.1.0": {
+      "integrity": "a1232722e566409f8400ee742644604d5201672a3f6d531852f2c5b80c5899a8",
+      "dependencies": [
+        "npm:@modelcontextprotocol/sdk",
+        "npm:fetch-to-node"
+      ]
+    }
+  },
   "npm": {
+    "@hono/node-server@1.15.0_hono@4.8.3": {
+      "integrity": "sha512-MjmK4l5N4dQpZ9OSWN0tCj7ejuc7WvuWMzSKtc89bnknJykAeHxzRigXBTYZk85H6Awrii6RM59iUiUluApu2A==",
+      "dependencies": [
+        "hono"
+      ]
+    },
     "@modelcontextprotocol/sdk@1.13.3_express@5.1.0_zod@3.25.67": {
       "integrity": "sha512-bGwA78F/U5G2jrnsdRkPY3IwIwZeWUEfb5o764b79lb0rJmMT76TLwKhdNZOWakOQtedYefwIR4emisEMvInKA==",
       "dependencies": [
@@ -20,6 +40,12 @@
         "raw-body",
         "zod",
         "zod-to-json-schema"
+      ]
+    },
+    "@types/node@22.15.15": {
+      "integrity": "sha512-R5muMcZob3/Jjchn5LcO8jdKwSCbzqmPB6ruBxMcf9kbxtniZHP327s6C37iOfuw8mbKK3cAQa7sEl7afLrQ8A==",
+      "dependencies": [
+        "undici-types"
       ]
     },
     "accepts@2.0.0": {
@@ -193,6 +219,9 @@
     "fast-json-stable-stringify@2.1.0": {
       "integrity": "sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw=="
     },
+    "fetch-to-node@2.1.0": {
+      "integrity": "sha512-Wq05j6LE1GrWpT2t1YbCkyFY6xKRJq3hx/oRJdWEJpZlik3g25MmdJS6RFm49iiMJw6zpZuBOrgihOgy2jGyAA=="
+    },
     "finalhandler@2.1.0": {
       "integrity": "sha512-/t88Ty3d5JWQbWYgaOGCCYfXRwV1+be02WqYYlL6h0lEiUAMPM8o8qKGO01YIkOHzka2up08wvgYD0mDiI+q3Q==",
       "dependencies": [
@@ -246,6 +275,9 @@
       "dependencies": [
         "function-bind"
       ]
+    },
+    "hono@4.8.3": {
+      "integrity": "sha512-jYZ6ZtfWjzBdh8H/0CIFfCBHaFL75k+KMzaM177hrWWm2TWL39YMYaJgB74uK/niRc866NMlH9B8uCvIo284WQ=="
     },
     "http-errors@2.0.0": {
       "integrity": "sha512-FtwrG/euBzaEjYeRqOgly7G0qviiXoJWnvEH2Z1plBdXgbyjv34pHTSb9zoeHMyDy33+DWy5Wt9Wo+TURtOYSQ==",
@@ -466,6 +498,9 @@
         "mime-types"
       ]
     },
+    "undici-types@6.21.0": {
+      "integrity": "sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ=="
+    },
     "unpipe@1.0.0": {
       "integrity": "sha512-pjy2bYhSsufwWlKwPc+l3cN7+wuJlK6uz0YdJEOlQDbl6jo/YlPi4mb8agUkVC8BF7V8NuzeyPNqRksA3hztKQ=="
     },
@@ -500,7 +535,9 @@
   },
   "workspace": {
     "dependencies": [
+      "jsr:@pixel/mcp-adapter@0.1",
       "npm:@modelcontextprotocol/sdk@^1.13.3",
+      "npm:hono@^4.8.3",
       "npm:zod@^3.25.67"
     ]
   }

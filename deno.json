@@ -1,6 +1,8 @@
 {
   "imports": {
     "@modelcontextprotocol/sdk": "npm:@modelcontextprotocol/sdk@^1.13.3",
+    "@pixel/mcp-adapter": "jsr:@pixel/mcp-adapter@^0.1.0",
+    "hono": "npm:hono@^4.8.3",
     "zod": "npm:zod@^3.25.67"
   }
 }
