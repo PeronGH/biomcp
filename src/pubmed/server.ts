@@ -9,7 +9,7 @@ export function createPubMedServer(): McpServer {
   });
 
   server.registerTool(
-    "getFullText",
+    "getFullTextJson",
     {
       title: "Get Full Text in BioC JSON",
       description:
