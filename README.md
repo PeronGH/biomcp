@@ -1,7 +1,7 @@
 # BioMCP
 
 A collection of MCP servers for biological and biomedical databases including
-PubMed Central, QuickGo, PlasmoDB, and more.
+PubMed Central, PlasmoDB, QuickGO, and more.
 
 ## Quick Start
 

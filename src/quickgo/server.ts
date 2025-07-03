@@ -25,7 +25,7 @@ function callApi(
   }).then((res) => res.text());
 }
 
-export function createQuickGoServer() {
+export function createQuickGoServer(): McpServer {
   const server = new McpServer({
     name: "quickgo",
     version: "1.0.0",
