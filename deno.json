@@ -1,6 +1,6 @@
 {
   "imports": {
-    "@modelcontextprotocol/sdk": "npm:@modelcontextprotocol/sdk@^1.14.0",
+    "@modelcontextprotocol/sdk": "npm:@modelcontextprotocol/sdk@^1.15.0",
     "@pixel/bioc2md": "jsr:@pixel/bioc2md@^0.1.1",
     "@pixel/mcp-adapter": "jsr:@pixel/mcp-adapter@^0.1.1",
     "hono": "npm:hono@^4.8.3",

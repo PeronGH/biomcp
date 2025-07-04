@@ -6,6 +6,7 @@
     "npm:@hono/node-server@*": "1.15.0_hono@4.8.3",
     "npm:@modelcontextprotocol/sdk@^1.13.3": "1.14.0_express@5.1.0_zod@3.25.71",
     "npm:@modelcontextprotocol/sdk@^1.14.0": "1.14.0_express@5.1.0_zod@3.25.71",
+    "npm:@modelcontextprotocol/sdk@^1.15.0": "1.15.0_express@5.1.0_zod@3.25.71",
     "npm:@types/node@*": "22.15.15",
     "npm:fetch-to-node@^2.1.0": "2.1.0",
     "npm:hono@^4.8.3": "4.8.3",
@@ -35,6 +36,23 @@
     },
     "@modelcontextprotocol/sdk@1.14.0_express@5.1.0_zod@3.25.71": {
       "integrity": "sha512-f43SYQVRPGQcYDQMiL7T2qND4v9xCkBpunIVPhNT/K2vUe+R3kYw2FyOIlbPxZJIYnhBNjeaHFeKv/cOZZErNg==",
+      "dependencies": [
+        "ajv",
+        "content-type",
+        "cors",
+        "cross-spawn",
+        "eventsource",
+        "eventsource-parser",
+        "express",
+        "express-rate-limit",
+        "pkce-challenge",
+        "raw-body",
+        "zod",
+        "zod-to-json-schema"
+      ]
+    },
+    "@modelcontextprotocol/sdk@1.15.0_express@5.1.0_zod@3.25.71": {
+      "integrity": "sha512-67hnl/ROKdb03Vuu0YOr+baKTvf1/5YBHBm9KnZdjdAh8hjt4FRCPD5ucwxGB237sBpzlqQsLy1PFu7z/ekZ9Q==",
       "dependencies": [
         "ajv",
         "content-type",
@@ -545,7 +563,7 @@
     "dependencies": [
       "jsr:@pixel/bioc2md@~0.1.1",
       "jsr:@pixel/mcp-adapter@~0.1.1",
-      "npm:@modelcontextprotocol/sdk@^1.14.0",
+      "npm:@modelcontextprotocol/sdk@^1.15.0",
       "npm:hono@^4.8.3",
       "npm:zod@^3.25.71"
     ]
